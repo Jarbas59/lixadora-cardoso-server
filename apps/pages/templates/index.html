@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Lixadora Cardoso - Home{% endblock %}
+{% block content %}
+    {% for bloco in blocos %}
+        {% include "components/page1_slide.html" %}
+        {% include "components/page2_banner1.html" %}
+        {% include "components/page3_servicos.html" %}
+        {% include "components/page4_banner2.html" %}
+        {% include "components/page5_especialistas.html" %}
+        {% include "components/page6_banner3.html" %}
+        {% include "components/page7_faq.html" %}
+        {% include "components/page8_contato.html" %}
+    {% endfor %}
+{% endblock %}

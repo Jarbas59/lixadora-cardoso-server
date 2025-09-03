@@ -1,0 +1,34 @@
+{% if bloco.bloco.nome == 'BANNER_1' %}
+<section>
+    <div class="container py-lg-5 mt-5" data-aos="fade-up" id="sobre">
+        <div class="row">
+            {% for banner_1 in bloco.conteudo.all %} 
+            <div class="col-md-6 col-lg-5">
+                <div class="d-flex align-items-center">
+                    <img src="{{banner_1.imagem.url}}"
+                        class="image_banner1 rounded-5 object-fit-cover d-block w-100" height="550" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-7 pl-lg-5 py-md-5">
+                <div class="row justify-content-start pb-3">
+                    <div class="col-md-12 p-4 p-lg-5">
+                        <span class="mb-1 fs-5 fw-normal">{{banner_1.titulo_2|default:""}}</span>
+                        <h2 class="mb-4 fs-1 fw-bold">{{banner_1.titulo_1|default:""}}</h2>
+                        <p class="mb-3 fw-normal">{{banner_1.descricao_1|default:""}}</p>
+                        <p>{{banner_1.descricao_2|default:""}}</p>
+                        <p>
+                            {% if banner_1.titulo_botao_1 %}
+                            <a href="{{ banner_1.rota_botao_1 }}" class="btn btn-warning py-3 px-4" target="_blank">{{ banner_1.titulo_botao_1 }}</a> 
+                            {% endif %}   
+                            {% if banner_1.titulo_botao_2 %}
+                            <a href="{{ banner_1.rota_botao_2 }}" class="btn btn-warning py-3 px-4" target="_blank">{{ banner_1.titulo_botao_2 }}</a>
+                            {% endif %}  
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

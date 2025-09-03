@@ -1,0 +1,28 @@
+{% if bloco.bloco.nome == 'SERVICOS' %}
+<section>
+    <div class="container py-lg-5" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2 class="mb-3 fw-bold">{{bloco.titulo}}</h2>
+                <p>{{bloco.descricao|default:""}}</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for servico in bloco.conteudo.all %} 
+            <div class="col-md-6 d-flex align-self-stretch">
+                <div class="d-flex flex-column flex-lg-row gap-4 justify-content-center justify-content-lg-start">
+                    <div class="rounded p-3 shadow-lg" style="background-color: {{servico.cor_label}}; width: fit-content; height: 225px; align-items: center;">
+                        <img src="{{servico.imagem.url}}" height="160px" class="shadow-lg">
+                    </div>
+                    <div class="media-body pl-md-4">
+                        <h3 class="text-dark text-decoration-none mb-3">{{servico.titulo_1}}</h3>
+                        <p>{{servico.descricao_1}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+                
+        </div>
+    </div>
+</section>
+{% endif %}

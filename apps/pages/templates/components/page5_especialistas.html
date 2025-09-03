@@ -1,0 +1,70 @@
+{% if bloco.bloco.nome == 'ESPECIALISTAS' %}
+<section>
+    <div class="container text-center py-lg-5 pb-5" data-aos="fade-up">
+        <div class="row justify-content-center pb-3 pt-5">
+            <div class="col-md-12">
+                <h2 class="mb-1">{{bloco.titulo}}</h2>
+            </div>
+        </div>
+
+        <div class="carousel-wrapper overflow-hidden w-100" style="max-width: 520px; margin: 0 auto;">
+                <div class="carousel-track d-flex gap-4">
+                    {% for especialidade in bloco.conteudo.all %}
+                    <div class="p-4 bg-light rounded-5 text-center" style="min-width: 250px;">
+                        <img src="{{especialidade.imagem.url}}" class="rounded-circle object-fit-cover mb-3" width="200" height="200" alt="Foto Perfil de Funcionario">
+                        <h3><a class="link-dark text-decoration-none" href="#">{{especialidade.titulo_1}}</a></h3>
+                        <p style="width: 200px;">{{especialidade.descricao_1}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<style>
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+.carousel-track > div {
+  flex-shrink: 0;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  if (!track) return;
+
+  const cards = Array.from(track.children);
+  const trackWidth = cards.reduce((sum, card) => sum + card.offsetWidth + parseFloat(getComputedStyle(card).marginRight || 0), 0);
+
+  // duplicar track para efeito infinito
+  cards.forEach(card => {
+    track.appendChild(card.cloneNode(true));
+  });
+
+  let position = 0;
+  const speed = 1; // px por frame
+
+  function animate() {
+    position -= speed;
+    // resetar posição quando metade da track duplicada passar
+    if (Math.abs(position) >= trackWidth) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+</script>

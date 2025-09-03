@@ -1,0 +1,68 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg position-absolute top-0 w-100 px-5" style="height: 120px; z-index: 10;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="{{ logo.image.url }}" width="120" alt="{{ logo.title }}" title="{{ logo.title }}" class="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-lg-auto mb-lg-0 flex-row gap-3 px-3" style="font-style: 18px;">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#contato">Contato</a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+                <span class="p-2"><i class="fas fa-user mx-2"></i>{{user.first_name}} {{user.last_name}}</span>
+                <button class="btn btn-danger mx-2" data-bs-toggle="modal" href="#logoutModal">Logout</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/'">Admin</button>
+            {% else %}
+                <button class="btn btn-warning mx-2" id="btn-entrar" onclick="location.href='{% url 'login' %}'">Entrar</button>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<style>
+@media (min-width: 768px) and (max-width: 1199px) {
+    .navbar #btn-entrar{
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .navbar-brand img {
+        display: none;
+    }
+
+    .navbar #btn-entrar{
+        display: none;
+    }
+}
+
+@media (max-width: 767px){
+    .navbar-brand img {
+        display: none;
+    }
+
+    .navbar #btn-entrar{
+        display: none;
+    }
+
+    .nav-item{
+        font-size: 14px;
+        text-align: center;
+    }
+}
+</style>
