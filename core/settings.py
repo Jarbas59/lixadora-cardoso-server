@@ -30,8 +30,6 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 APPS_DIR = str(os.path.join(BASE_DIR,'apps')) # Dentro da pasta apps na raiz do projeto
 sys.path.insert(0, APPS_DIR)
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -42,8 +40,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = [
-    'localhost', 
-	'127.0.0.1',  
+    'lixadoracardoso.com.br',
 ]
 
 
