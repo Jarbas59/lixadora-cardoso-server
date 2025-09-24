@@ -1,66 +1,65 @@
 {% if bloco.bloco.nome == 'BANNER_3' %}
 <section data-aos="fade-up">
   <h2 class="mt-4 text-center justify-content-center">Estatísticas de Clientes</h2>
-  <div class="container py-5 d-flex justify-content-center">
+  <div class="container py-4 d-flex flex-column align-items-center justify-content-center gap-5">
+
     <!-- Texto -->
-    <div class="col-md-6 col-lg-7 pl-lg-5 py-md-5">
-            <div class="column justify-content-start pb-3">
-                <div class="col-md-12 p-4 p-lg-5">
-                    <span class="mb-1 fs-5 fw-normal">A voz e os números de quem confia na Lixadora Cardoso</span>
-                    <h2 class="mb-4 fs-1 fw-bold">Resultados que falam por si e clientes que comprovam</h2>
-                    <p class="mb-3 fw-normal">Ao longo da nossa trajetória, já transformamos dezenas de pisos de madeira, sempre com dedicação, qualidade e atenção a cada detalhe. Os números ao lado representam a confiança que nossos clientes depositam em nosso trabalho e a satisfação de ver seus ambientes renovados.</p>
-                    <p>Sua opinião é essencial para continuarmos crescendo e melhorando. Compartilhe sua experiência conosco e ajude a Lixadora Cardoso a entregar sempre o melhor.</p>
-                    <a href="#" class="btn btn-warning py-3 px-4">Deixe sua avaliação</a>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-6 col-lg-5 text-center justify-content-center">
+      <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">Nossos Números</span>
+      <h2 class="fw-bold mb-3">Resultados que falam por si</h2>
+      <p class="text-muted">
+        Mais do que estatísticas, nossos números representam a confiança e a satisfação de quem escolhe a Lixadora Cardoso. 
+        Cada projeto finalizado é um passo a mais na construção de ambientes renovados e clientes felizes.
+      </p>
+      <a href="https://forms.gle/cHj5x7kB35MhDGHo8" target="_blank" class="btn btn-dark btn-lg mt-3">Deixe sua avaliação</a>
+    </div>
     
     <div class="radial-charts d-flex flex-wrap justify-content-center gap-5">
 
       <!-- Gráfico 1 -->
       <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="75" data-color="#007bff">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">75%</div>
-        </div>
-        <p class="radial-text mt-2">Clientes Satisfeitos</p>
-      </div>
-
-      <!-- Gráfico 2 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="50" data-color="#28a745">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">50%</div>
-        </div>
-        <p class="radial-text mt-2">Projetos Concluídos</p>
-      </div>
-
-      <!-- Gráfico 3 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="90" data-color="#ffc107">
+        <div class="radial-chart" data-value="90" data-color="#007bff">
           <svg width="140" height="140">
             <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
             <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
           </svg>
           <div class="radial-label">90%</div>
         </div>
+        <p class="radial-text mt-2">Clientes Satisfeitos</p>
+      </div>
+
+      <!-- Gráfico 2 -->
+      <div class="radial-chart-wrapper">
+        <div class="radial-chart" data-value="75" data-color="#28a745">
+          <svg width="140" height="140">
+            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
+            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
+          </svg>
+          <div class="radial-label">75%</div>
+        </div>
+        <p class="radial-text mt-2">Projetos Concluídos</p>
+      </div>
+
+      <!-- Gráfico 3 -->
+      <div class="radial-chart-wrapper">
+        <div class="radial-chart" data-value="96" data-color="#ffc107">
+          <svg width="140" height="140">
+            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
+            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
+          </svg>
+          <div class="radial-label">96%</div>
+        </div>
         <p class="radial-text mt-2">Retenção de Clientes</p>
       </div>
 
       <!-- Gráfico 4 -->
       <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="65" data-color="#dc3545">
+        <div class="radial-chart" data-value="60" data-color="#dc3545">
           <svg width="140" height="140">
             <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
             <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
           </svg>
-          <div class="radial-label">65%</div>
+          <div class="radial-label">60%</div>
         </div>
         <p class="radial-text mt-2">Novos Clientes</p>
       </div>
