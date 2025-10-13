@@ -242,7 +242,7 @@ MESSAGE_TAGS = {
 
 SESSION_EXPIRE_SECONDS = 1800
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/timeout/'
+SESSION_TIMEOUT_REDIRECT = 'https://lixadoracardoso.com.br/contas/timeout/'
 
 #Redirecionamento após login/logout:
 
